@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "Neo Ganga - Inspired by Purity",
+  "short_name": "Neo Ganga",
+  "description": "Discover customized water bottles for events and celebrations.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#071c3b",
+  "icons": [
+    {
+      "src": "./neo-ganga-logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./neo-ganga-logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

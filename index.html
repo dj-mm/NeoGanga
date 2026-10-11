@@ -1101,6 +1101,66 @@ footer .row > div {
     transition-duration: .01ms !important;
   }
 }
+.bottle-image-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 540px;
+  padding: 20px 0;
+}
+
+.hero-bottle-image {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  max-width: 390px;
+  height: 520px;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 16px 22px rgba(7, 28, 59, 0.12));
+}
+
+.bottle-image-area .orbit {
+  position: absolute;
+  z-index: 0;
+}
+
+.bottle-image-area .float-note {
+  z-index: 3;
+}
+
+@media (max-width: 991px) {
+  .bottle-image-area {
+    min-height: 440px;
+  }
+
+  .hero-bottle-image {
+    max-width: 330px;
+    height: 430px;
+  }
+}
+
+@media (max-width: 576px) {
+  .bottle-image-area {
+    min-height: 350px;
+    padding: 15px 0;
+  }
+
+  .hero-bottle-image {
+    max-width: 270px;
+    height: 340px;
+  }
+
+  .bottle-image-area .note1 {
+    left: 0;
+  }
+
+  .bottle-image-area .note2 {
+    right: 0;
+  }
+}
 
 
 </style>
@@ -1198,42 +1258,73 @@ footer .row > div {
 <section class="hero" id="home">
   <div class="container">
     <div class="row align-items-center g-4">
+
+      <!-- HERO CONTENT -->
       <div class="col-lg-7">
-        <span class="eyebrow"><i class="bi bi-stars me-2"></i>CUSTOM LABELLED WATER BOTTLES</span>
+        <span class="eyebrow">
+          <i class="bi bi-stars me-2"></i>
+          CUSTOM LABELLED WATER BOTTLES
+        </span>
+
         <h1>Your event.<br><span>Your bottle.</span><br>Your brand.</h1>
-        <p class="hero-copy">Make every sip part of the celebration. Create personalized water bottles featuring your name, logo, event theme or business identity with Neo Ganga.</p>
+
+        <p class="hero-copy">
+          Make every sip part of the celebration. Create personalized
+          water bottles featuring your name, logo, event theme or
+          business identity with Neo Ganga.
+        </p>
+
         <div class="d-flex flex-wrap gap-3 mt-4">
-          <a class="btn btn-primary btn-lg rounded-pill px-4" href="#enquiry">Customize Your Bottles <i class="bi bi-arrow-right ms-2"></i></a>
-          <a class="btn btn-outline-dark btn-lg rounded-pill px-4" href="#customize">Explore Options</a>
+          <a class="btn btn-primary btn-lg rounded-pill px-4" href="#enquiry">
+            Customize Your Bottles
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+
+          <a class="btn btn-outline-dark btn-lg rounded-pill px-4" href="#customize">
+            Explore Options
+          </a>
         </div>
+
         <div class="hero-points">
-          <div class="hero-point"><i class="bi bi-palette2"></i><span>Custom labels</span></div>
-          <div class="hero-point"><i class="bi bi-gift"></i><span>Every occasion</span></div>
-          <div class="hero-point"><i class="bi bi-chat-dots"></i><span>Easy ordering</span></div>
-        </div>
-      </div>
-      <div class="col-lg-5">
-        <div class="bottle-area">
-          <div class="orbit"></div>
-          <div class="float-note note1"><i class="bi bi-stars"></i> Designed around you</div>
-          <div class="bottle">
-            <div class="cap"></div>
-            <div class="neck"></div>
-            <div class="body">
-              <div class="shine"></div>
-              <div class="label">
-                <i class="bi bi-mountains"></i>
-                <h4>Neo <span>Ganga</span></h4>
-                <small>INSPIRED BY PURITY</small>
-                <hr class="my-1">
-                <div class="event">Your special day</div>
-                <small>PURE WATER · PURE MOMENTS</small>
-              </div>
-            </div>
+          <div class="hero-point">
+            <i class="bi bi-palette2"></i>
+            <span>Custom labels</span>
           </div>
-          <div class="float-note note2"><i class="bi bi-patch-check-fill"></i> Your name. Your logo. Your story.</div>
+          <div class="hero-point">
+            <i class="bi bi-gift"></i>
+            <span>Every occasion</span>
+          </div>
+          <div class="hero-point">
+            <i class="bi bi-chat-dots"></i>
+            <span>Easy ordering</span>
+          </div>
         </div>
       </div>
+
+      <!-- ACTUAL NEO GANGA BOTTLE IMAGE -->
+      <div class="col-lg-5">
+        <div class="bottle-area bottle-image-area">
+          <div class="orbit"></div>
+
+          <div class="float-note note1">
+            <i class="bi bi-stars"></i>
+            Designed around you
+          </div>
+
+          <img
+            src="./neoganga1.png"
+            alt="Neo Ganga customized packaged drinking water bottle"
+            class="hero-bottle-image"
+            fetchpriority="high"
+          >
+
+          <div class="float-note note2">
+            <i class="bi bi-patch-check-fill"></i>
+            Your name. Your logo. Your story.
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

@@ -1,7 +1,8 @@
-const CACHE_NAME = "neo-ganga-v1";
+const CACHE_NAME = "neo-ganga-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
+  "./team.html",
   "./manifest.json"
 ];
 

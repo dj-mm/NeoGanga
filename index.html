@@ -8,12 +8,13 @@
 <title>Neo Ganga | Inspired by Purity</title>
 
 <!-- Website Favicon -->
-<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#071c3b">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Neo Ganga">
-<link rel="apple-touch-icon" href="./favicon.png">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1402,6 +1403,60 @@ footer .row > div {
   </div>
 </section>
 
+
+
+<!-- OUR TEAM SECTION -->
+<section class="team-section py-5" id="team">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="team-subtitle">MEET OUR TEAM</span>
+      <h2 class="team-heading">The People Behind <span>Neo Ganga</span></h2>
+      <p class="team-intro">
+        Meet the people working together to bring purity and quality to every bottle.
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center align-items-stretch">
+
+  <!-- Founder -->
+  <div class="col-12 col-md-6 col-xl-5">
+    <article class="team-card h-100">
+      <img src="./Subhas.jpeg" alt="Subhash Sahu"
+           class="team-img" loading="lazy">
+      <h4>Subhash Sahu</h4>
+      <p class="team-role">Founder, Neo Ganga</p>
+      <p class="team-description">
+        I grew up along the banks of the River Ganga. After working as a
+        Junior Engineer in the industrial sector for nearly two years,
+        I turned my vision into reality by starting Neo Ganga.
+        My goal is to help every outlet, restaurant, and special occasion
+        build a unique identity through customized bottled water.
+      </p>
+      <p class="fw-bold text-info">Your Brand. Your Bottle. Your Identity.</p>
+    </article>
+  </div>
+
+  <!-- Co-Founder -->
+  <div class="col-12 col-md-6 col-xl-5">
+    <article class="team-card h-100">
+      <img src="./vivek.jpeg" alt="Vivek Kumar"
+           class="team-img" loading="lazy">
+      <h4>Vivek Kumar</h4>
+      <p class="team-role">Co-Founder, Neo Ganga</p>
+      <p class="team-description">
+        With one year of experience as a Junior Engineer at a reputed
+        company, I gained technical skills and practical industry
+        knowledge. Driven by an entrepreneurial vision, I co-founded
+        Neo Ganga with a commitment to quality, purity, innovation,
+        and customer satisfaction.
+      </p>
+    </article>
+  </div>
+
+</div>
+  </div>
+</section>
+
 <section class="social-section">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
     <div><span class="kicker">FOLLOW THE BRAND</span><h3 class="fw-bold mt-2 mb-0">Pure water. <span class="text-primary">Pure moments.</span></h3></div>
@@ -1455,6 +1510,135 @@ footer .row > div {
 <button class="back-top" id="backTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+/* TEAM SECTION */
+.team-section {
+  background: linear-gradient(180deg, #f3fbff 0%, #ffffff 100%);
+  color: #123047;
+  overflow: hidden;
+}
+
+.team-subtitle {
+  color: #0787a5;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.team-heading {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+.team-heading span {
+  color: #0787a5;
+}
+
+.team-intro {
+  color: #647789;
+  max-width: 550px;
+  margin: 12px auto 0;
+  line-height: 1.7;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 18px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #e2edf2;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(18, 48, 71, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(18, 48, 71, 0.13);
+}
+
+.team-img {
+  display: block;
+  width: 100%;
+  height: clamp(250px, 32vw, 390px);
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 16px;
+  border: none;
+  padding: 0;
+  margin: 0 0 18px;
+  background: #f3f8fa;
+}
+
+.team-card h4 {
+  font-size: 21px;
+  font-weight: 750;
+  margin-bottom: 7px;
+}
+
+.team-role {
+  color: #0787a5;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.team-description {
+  color: #647789;
+  font-size: 14px;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.team-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #0787a5;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.team-link:hover {
+  color: #075d78;
+}
+
+body[data-theme="dark"] .team-section {
+  background: linear-gradient(180deg, #142235 0%, #101a29 100%);
+  color: #e6edf6;
+}
+
+body[data-theme="dark"] .team-card {
+  background: #1c2b40;
+  border-color: #304258;
+}
+
+body[data-theme="dark"] .team-intro,
+body[data-theme="dark"] .team-description {
+  color: #a7b5c7;
+}
+
+@media (max-width: 576px) {
+  .team-card {
+    padding: 14px;
+  }
+
+  .team-img {
+    height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-card {
+    transition: none;
+  }
+}
+</style>
+
 <script>
 /*
   GOOGLE SHEETS SETUP:

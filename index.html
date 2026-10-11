@@ -1166,51 +1166,51 @@ footer .row > div {
 </style>
 </head>
 <script>
-  let deferredInstallPrompt = null;
+    let deferredInstallPrompt = null;
 
-  const installBtn = document.getElementById("installAppBtn");
+    const installBtn = document.getElementById("installAppBtn");
 
   // Register service worker on HTTPS or localhost.
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./sw.js")
-        .catch(error => {
-          console.error("Service worker registration failed:", error);
-        });
-    });
-  }
-
-  // Chrome / Android install prompt.
-  window.addEventListener("beforeinstallprompt", event => {
-    event.preventDefault();
-    deferredInstallPrompt = event;
-
-    if (installBtn) {
-      installBtn.hidden = false;
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+          .catch(error => {
+            console.error("Service worker registration failed:", error);
+          });
+      });
     }
-  });
 
-  if (installBtn) {
-    installBtn.addEventListener("click", async () => {
-      if (deferredInstallPrompt) {
-        deferredInstallPrompt.prompt();
+    // Chrome / Android install prompt.
+    window.addEventListener("beforeinstallprompt", event => {
+      event.preventDefault();
+      deferredInstallPrompt = event;
 
-        await deferredInstallPrompt.userChoice;
-        deferredInstallPrompt = null;
-        installBtn.hidden = true;
-      } else {
-        alert(
-          "To add Neo Ganga to your Home Screen, open your browser menu and choose 'Install app' or 'Add to Home Screen'."
-        );
+      if (installBtn) {
+        installBtn.hidden = false;
       }
     });
-  }
 
-  // Hide install button after successful installation.
-  window.addEventListener("appinstalled", () => {
-    if (installBtn) installBtn.hidden = true;
-    deferredInstallPrompt = null;
-  });
+    if (installBtn) {
+      installBtn.addEventListener("click", async () => {
+        if (deferredInstallPrompt) {
+          deferredInstallPrompt.prompt();
+
+          await deferredInstallPrompt.userChoice;
+          deferredInstallPrompt = null;
+          installBtn.hidden = true;
+        } else {
+          alert(
+            "To add Neo Ganga to your Home Screen, open your browser menu and choose 'Install app' or 'Add to Home Screen'."
+          );
+        }
+      });
+    }
+
+    // Hide install button after successful installation.
+    window.addEventListener("appinstalled", () => {
+      if (installBtn) installBtn.hidden = true;
+      deferredInstallPrompt = null;
+    });
 </script>
 
 <body>
@@ -1302,7 +1302,7 @@ footer .row > div {
       </div>
 
       <!-- ACTUAL NEO GANGA BOTTLE IMAGE -->
-      <div class="col-lg-5">
+      <div class="col-lg-4">
         <div class="bottle-area bottle-image-area">
           <div class="orbit"></div>
 
@@ -1403,10 +1403,71 @@ footer .row > div {
           <p>Bring your theme, logo or creative idea. Let's explore a bottle label made for your event.</p>
           <a class="btn btn-light rounded-pill px-4 mt-2" href="#enquiry">Let's Create Yours <i class="bi bi-arrow-right ms-2"></i></a>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-5">
           <div class="cta-circle mx-lg-auto"><i class="bi bi-droplet-fill"></i>Neo Ganga<small>INSPIRED BY PURITY</small></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- OUR TEAM SECTION -->
+<section class="team-section py-5" id="team">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="team-subtitle">MEET OUR TEAM</span>
+      <h2 class="team-heading">The People Behind <span>Neo Ganga</span></h2>
+      <p class="team-intro">
+        Meet the people working together to bring purity and quality to every bottle.
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center align-items-stretch">
+
+  <!-- Founder -->
+  <div class="col-12 col-md-6 col-xl-5">
+    <article class="team-card h-100">
+      <img src="./Subhas.jpeg" alt="Subhash Sahu"
+           class="team-img" loading="lazy">
+      <h4>Subhash Sahu</h4>
+      <p class="team-role">Founder, Neo Ganga</p>
+      <p class="team-description">
+        I grew up along the banks of the River Ganga. After working as a
+        Junior Engineer in the industrial sector for nearly two years,
+        I turned my vision into reality by starting Neo Ganga.
+        My goal is to help every outlet, restaurant, and special occasion
+        build a unique identity through customized bottled water.
+      </p>
+      <p class="fw-bold text-info">Your Brand. Your Bottle. Your Identity.</p>
+    </article>
+  </div>
+
+  <!-- Co-Founder -->
+  <div class="col-12 col-md-6 col-xl-5">
+    <article class="team-card h-100">
+      <img src="./vivek.jpeg" alt="Vivek Kumar"
+           class="team-img" loading="lazy">
+      <h4>Vivek Kumar</h4>
+      <p class="team-role">Co-Founder, Neo Ganga</p>
+      <p class="team-description">
+        With one year of experience as a Junior Engineer at a reputed
+        company, I gained technical skills and practical industry
+        knowledge. Driven by an entrepreneurial vision, I co-founded
+        Neo Ganga with a commitment to quality, purity, innovation,
+        and customer satisfaction.
+      </p>
+    </article>
+  </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a class="team-toggle" href="./team.html">
+        View More Team Members
+      </a>
     </div>
   </div>
 </section>
@@ -1494,65 +1555,6 @@ footer .row > div {
   </div>
 </section>
 
-
-
-<!-- OUR TEAM SECTION -->
-<section class="team-section py-5" id="team">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="team-subtitle">MEET OUR TEAM</span>
-      <h2 class="team-heading">The People Behind <span>Neo Ganga</span></h2>
-      <p class="team-intro">
-        Meet the people working together to bring purity and quality to every bottle.
-      </p>
-    </div>
-
-    <div class="row g-4 justify-content-center align-items-stretch">
-
-  <!-- Founder -->
-  <div class="col-12 col-md-6 col-xl-5">
-    <article class="team-card h-100">
-      <img src="./Subhas.jpeg" alt="Subhash Sahu"
-           class="team-img" loading="lazy">
-      <h4>Subhash Sahu</h4>
-      <p class="team-role">Founder, Neo Ganga</p>
-      <p class="team-description">
-        I grew up along the banks of the River Ganga. After working as a
-        Junior Engineer in the industrial sector for nearly two years,
-        I turned my vision into reality by starting Neo Ganga.
-        My goal is to help every outlet, restaurant, and special occasion
-        build a unique identity through customized bottled water.
-      </p>
-      <p class="fw-bold text-info">Your Brand. Your Bottle. Your Identity.</p>
-    </article>
-  </div>
-
-  <!-- Co-Founder -->
-  <div class="col-12 col-md-6 col-xl-5">
-    <article class="team-card h-100">
-      <img src="./vivek.jpeg" alt="Vivek Kumar"
-           class="team-img" loading="lazy">
-      <h4>Vivek Kumar</h4>
-      <p class="team-role">Co-Founder, Neo Ganga</p>
-      <p class="team-description">
-        With one year of experience as a Junior Engineer at a reputed
-        company, I gained technical skills and practical industry
-        knowledge. Driven by an entrepreneurial vision, I co-founded
-        Neo Ganga with a commitment to quality, purity, innovation,
-        and customer satisfaction.
-      </p>
-    </article>
-  </div>
-    </div>
-
-    <div class="text-center mt-4">
-      <a class="team-toggle" href="./team.html">
-        View More Team Members
-      </a>
-    </div>
-  </div>
-</section>
-
 <section class="social-section">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
     <div><span class="kicker">FOLLOW THE BRAND</span><h3 class="fw-bold mt-2 mb-0">Pure water. <span class="text-primary">Pure moments.</span></h3></div>
@@ -1568,7 +1570,7 @@ footer .row > div {
 <footer id="contact">
   <div class="container">
     <div class="row g-4">
-      <div class="col-lg-5">
+      <div class="col-lg-4">
         <a class="brand text-white" href="#home">
           <img class="brand-logo" src="neo-ganga-logo.jpeg" alt="Neo Ganga — Inspired by Purity">
         </a>
@@ -1586,7 +1588,11 @@ footer .row > div {
         <a href="tel:+91 7905048882">7905048882</a>
         <a href="mailto:neoganga33@gmail.com">Email us</a>
       </div>
-      <div class="col-lg-3">
+      <div class="col-6 col-lg-2">
+        <h5>Partner</h5>
+        <a href="https://bharatgentechnologies.vercel.app/" target="_blank" rel="noopener noreferrer">BharatGen Technologies</a>
+      </div>
+      <div class="col-6 col-lg-2">
         <h5>Let's connect</h5>
         <p>Have an event coming up? Tell us your idea.</p>
         <a href="https://wa.me/919792941692" target="_blank"><i class="bi bi-whatsapp me-2"></i>Chat on WhatsApp</a>
